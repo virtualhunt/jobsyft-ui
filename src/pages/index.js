@@ -4,6 +4,7 @@ import Card from "../components/Card"
 import Header from "../components/Header"
 import Hero from "../components/Hero"
 import Listing from "../components/Listing"
+import Footer from "../components/Footer"
 
 const { jobs } = require("../data/jobs")
 export default function Home({ jobsData }) {
@@ -19,12 +20,8 @@ export default function Home({ jobsData }) {
       <div style={{ backgroundColor: "#EBEEF3" }}>
         <Hero />
       </div>
-      {/* <div style={{
-        margin: "auto"
-      }}> */}
-        <Listing jobsData={jobsData} />
-      {/* </div> */}
-      {/* <Card /> */}
+      <Listing jobsData={jobsData} />
+      <Footer />
     </>
   )
 }

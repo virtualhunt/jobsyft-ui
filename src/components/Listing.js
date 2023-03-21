@@ -18,15 +18,8 @@ export default function List({ jobsData }) {
     return (
         <Box
         width={{ base: "60%", sm: '80%', md: '80%' }}
-        margin={'auto'}>
-        <Heading
-            fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-            lineHeight={'200%'}>
-            <Text as={'span'} color={'gray.600'}>
-                Jobs
-            </Text>
-        </Heading>
+        margin={'auto'}
+        marginTop={"2rem"}>
         {
             jobsData.map((item) => {
                 return (<div style={{

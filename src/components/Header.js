@@ -38,7 +38,7 @@ import {
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}>
-          <Flex
+          {/* <Flex
             flex={{ base: 1, md: 'auto' }}
             ml={{ base: -2 }}
             display={{ base: 'flex', md: 'none' }}>
@@ -50,14 +50,14 @@ import {
               variant={'ghost'}
               aria-label={'Toggle Navigation'}
             />
-          </Flex>
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+          </Flex> */}
+          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }}>
             <Text
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+              textAlign={useBreakpointValue({ base: 'center', md: 'center' })}
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
-              JobSyft
-              {/* <Image src={"/logo/logo.png"} height={70} width={70}/> */}
+              {/* JobSyft */}
+              <Image src={"/logo/logo.png"} height={70} width={70}/>
             </Text>
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -65,7 +65,7 @@ import {
             </Flex>
           </Flex>
   
-          <Stack
+          {/* <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
@@ -91,12 +91,12 @@ import {
               }}>
               Sign Up
             </Button>
-          </Stack>
+          </Stack> */}
         </Flex>
   
-        <Collapse in={isOpen} animateOpacity>
+        {/* <Collapse in={isOpen} animateOpacity>
           <MobileNav />
-        </Collapse>
+        </Collapse> */}
       </Box>
     );
   }
@@ -247,42 +247,42 @@ import {
   
   
   const NAV_ITEMS = [
-    {
-      label: 'Inspiration',
-      children: [
-        {
-          label: 'Explore Design Work',
-          subLabel: 'Trending Design to inspire you',
-          href: '#',
-        },
-        {
-          label: 'New & Noteworthy',
-          subLabel: 'Up-and-coming Designers',
-          href: '#',
-        },
-      ],
-    },
-    {
-      label: 'Find Work',
-      children: [
-        {
-          label: 'Job Board',
-          subLabel: 'Find your dream design job',
-          href: '#',
-        },
-        {
-          label: 'Freelance Projects',
-          subLabel: 'An exclusive list for contract work',
-          href: '#',
-        },
-      ],
-    },
-    {
-      label: 'Learn Design',
-      href: '#',
-    },
-    {
-      label: 'Hire Designers',
-      href: '#',
-    },
+    // {
+    //   label: 'Inspiration',
+    //   children: [
+    //     {
+    //       label: 'Explore Design Work',
+    //       subLabel: 'Trending Design to inspire you',
+    //       href: '#',
+    //     },
+    //     {
+    //       label: 'New & Noteworthy',
+    //       subLabel: 'Up-and-coming Designers',
+    //       href: '#',
+    //     },
+    //   ],
+    // },
+    // {
+    //   label: 'Find Work',
+    //   children: [
+    //     {
+    //       label: 'Job Board',
+    //       subLabel: 'Find your dream design job',
+    //       href: '#',
+    //     },
+    //     {
+    //       label: 'Freelance Projects',
+    //       subLabel: 'An exclusive list for contract work',
+    //       href: '#',
+    //     },
+    //   ],
+    // },
+    // {
+    //   label: 'Learn Design',
+    //   href: '#',
+    // },
+    // {
+    //   label: 'Hire Designers',
+    //   href: '#',
+    // },
   ];
