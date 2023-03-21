@@ -2,7 +2,7 @@ import { Card, CardBody, Text, Stack, Heading, Avatar } from "@chakra-ui/react"
 import Link from "next/link";
 const { FaGlobeAmericas, FaSuitcase, FaMoneyBill } = require('react-icons/fa');
 
-const getLocations = (locations) => {
+const getLocations = (locations = []) => {
     let string = ""
     locations.map((item) => {
         string += `${item}, `

@@ -22,7 +22,7 @@ export default function Home({ jobsData }) {
       <div style={{ backgroundColor: "#eeeff7" }}>
         <Hero />
       </div>
-      <Listing jobsData={jobsData} />
+      <Listing jobsDataArr={jobsData} />
       <Footer />
     </>
   )
@@ -32,7 +32,7 @@ export async function getServerSideProps(context) {
   var config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `http://localhost:8007/api/v1/jobs?limit=10&skip=0`,
+    url: `http://localhost:8007/api/v1/jobs?limit=5&skip=0`,
     headers: {}
   };
 
