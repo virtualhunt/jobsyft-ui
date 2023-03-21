@@ -25,11 +25,11 @@ export default function CallToActionWithAnnotation() {
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
             lineHeight={'110%'}>
             {/* Get Your Dream Job Here <br /> */}
-            <Text as={'span'} color={'green.400'}>
+            <Text as={'span'} color={'#8692c5'}>
             Get Your Dream Job Here
             </Text>
           </Heading>
-          <Text color={'gray.900'}>
+          <Text color={'#293256'}>
             We are the world's largest aggregator of job aggregators.
           </Text>
         </Stack>

@@ -8,7 +8,7 @@ const { FaHeart } = require('react-icons/fa');
 export default function Footer() {
     return (
         <Box style={{
-            backgroundColor: "#d3e3cf",
+            backgroundColor: "#a9b1d6",
             width: "100%",
             height: "2rem"
         }}

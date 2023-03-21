@@ -17,18 +17,18 @@ export default function List({ jobsData }) {
     console.log(jobsData, "jobs")
     return (
         <Box
-        width={{ base: "60%", sm: '80%', md: '80%' }}
-        margin={'auto'}
-        marginTop={"2rem"}>
-        {
-            jobsData.map((item) => {
-                return (<div style={{
-                    marginBottom: "1rem"
-                }}>
-                    <Card job={item}/>
-                </div>)
-            })
-        }
+            width={{ base: "90%", sm: '80%', md: '80%' }}
+            margin={'auto'}
+            marginTop={"2rem"}>
+            {
+                jobsData.map((item) => {
+                    return (<div style={{
+                        marginBottom: "1rem"
+                    }}>
+                        <Card job={item} />
+                    </div>)
+                })
+            }
         </Box>
     );
 }
