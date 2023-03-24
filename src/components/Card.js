@@ -28,7 +28,7 @@ export default function CardComponent({ job }) {
                         display={{ base: 'none', md: 'inline-flex' }}
                         size='lg'
                         name='Prosper Otemuyiwa'
-                        src='/logo/company.png'
+                        src={job.logoPath == "C" ? '/logo/company.png' : job.logoPath}
                     />
                 </div>
 

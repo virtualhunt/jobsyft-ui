@@ -19,6 +19,7 @@ const getEducation = (education) => {
         return []
     }
 }
+
 export default function Home({ jobData }) {
     const [education, setEducation] = useState(getEducation(jobData?.education))
     return (
@@ -49,10 +50,11 @@ export default function Home({ jobData }) {
                             width: "25px"
                         }}
                         />
-                        {jobData.location.map((item) => {
+                        {jobData.location.map((item, i) => {
                             return <Tag style={{
                                 marginRight: "0.3rem"
-                            }}>{item}</Tag>
+                            }}
+                            key={i}>{item}</Tag>
                         })}
                     </Box>}
                     {(jobData.experience || jobData.employmentType) && <Box h='30px' display={"inline-flex"}>
@@ -89,10 +91,11 @@ export default function Home({ jobData }) {
                             height: "25px",
                             width: "25px"
                         }} />
-                        {jobData.skills.map((item) => {
+                        {jobData.skills.map((item, i) => {
                             return <Tag style={{
                                 marginRight: "0.3rem"
-                            }}>{item}</Tag>
+                            }}
+                            key={i}>{item}</Tag>
                         })}
                     </Box>}
                     {education?.length && <Box h='30px' display={"inline-flex"}>
@@ -102,10 +105,11 @@ export default function Home({ jobData }) {
                             height: "25px",
                             width: "25px"
                         }} />
-                        {education.map((item) => {
+                        {education.map((item, i) => {
                             return <Tag style={{
                                 marginRight: "0.3rem"
-                            }}>{item}</Tag>
+                            }}
+                            key={i}>{item}</Tag>
                         })}
                     </Box>}
                     {jobData.jobDescription && <Box>
@@ -127,14 +131,13 @@ export default function Home({ jobData }) {
     )
 }
 export async function getServerSideProps(context) {
-    console.log(context.params, "QUERY")
     try {
         const { slug } = context.params
 
         var config = {
             method: 'get',
             maxBodyLength: Infinity,
-            url: `http://localhost:8007/api/v1/jobs/${slug}`,
+            url: `${process.env.DB_URL}/api/v1/jobs/${slug}`,
             headers: {}
         };
 

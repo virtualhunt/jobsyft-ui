@@ -32,18 +32,11 @@ export async function getServerSideProps(context) {
   var config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `http://localhost:8007/api/v1/jobs?limit=5&skip=0`,
+    url: `${process.env.DB_URL}/api/v1/jobs?limit=5&skip=0`,
     headers: {}
   };
 
   const allJobs = await axios(config)
-  // axios(config)
-  //   .then(function (response) {
-  //     console.log(JSON.stringify(response.data));
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   });
 
   return {
     props: {

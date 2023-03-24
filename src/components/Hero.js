@@ -30,7 +30,7 @@ export default function CallToActionWithAnnotation() {
             </Text>
           </Heading>
           <Text color={'#293256'}>
-            We are the world's largest aggregator of job aggregators.
+            We are the world&apos;s largest aggregator of job aggregators.
           </Text>
         </Stack>
       </Container>

@@ -7,14 +7,14 @@ import Card from "./Card"
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function List({ jobsDataArr }) {
-    console.log(jobsDataArr, "jobs")
+
     const [jobsData, setJobsData] = useState(jobsDataArr);
     const [hasMore, setHasMore] = useState(true);
 
     const getMoreJobs = async () => {
-        console.log(`http://localhost:8007/api/v1/jobs?limit=10&skip=${jobsData.length}`,"URL")
+        console.log(process.env.DB_URL,"DB_URL")
         const res = await fetch(
-            `http://localhost:8007/api/v1/jobs?limit=10&skip=${jobsData.length}`
+            `${process.env.DB_URL}/api/v1/jobs?limit=10&skip=${jobsData.length}`
         );
         const newJobsData = await res.json();
         setJobsData((jobsData) => [...jobsData, ...newJobsData]);
@@ -36,7 +36,9 @@ export default function List({ jobsDataArr }) {
                     jobsData.map((item) => {
                         return (<div style={{
                             marginBottom: "1rem"
-                        }}>
+                        }}
+                        key={item.slug}
+                        >
                             <Card job={item} key={JSON.stringify(jobsData)}/>
                         </div>)
                     })
