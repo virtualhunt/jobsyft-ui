@@ -2,8 +2,6 @@ import {
     Box,
     Flex,
     Text,
-    IconButton,
-    Button,
     Stack,
     Collapse,
     Icon,
@@ -13,12 +11,10 @@ import {
     PopoverContent,
     useColorModeValue,
     useBreakpointValue,
-    useDisclosure,
-    Image
+    useDisclosure
   } from '@chakra-ui/react';
+  import Image from 'next/image'
   import {
-    HamburgerIcon,
-    CloseIcon,
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
@@ -57,7 +53,7 @@ import {
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
               {/* JobSyft */}
-              <Image src={"/logo/logo.png"} height={70} width={70}/>
+              <Image src={"/logo/logo.png"} alt={"JobSyft Logo"} height={70} width={70}/>
             </Text>
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
