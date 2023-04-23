@@ -1,14 +1,9 @@
-import Head from 'next/head';
 import {
   Box,
   Heading,
   Container,
   Text,
-  Button,
   Stack,
-  Icon,
-  useColorModeValue,
-  createIcon,
 } from '@chakra-ui/react';
 
 export default function CallToActionWithAnnotation() {
@@ -30,7 +25,7 @@ export default function CallToActionWithAnnotation() {
             </Text>
           </Heading>
           <Text color={'#293256'}>
-            We are the world&apos;s largest aggregator of job aggregators.
+            We are the world&apos;s first aggregator of job aggregators.
           </Text>
         </Stack>
       </Container>

@@ -1,6 +1,6 @@
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
-import { Box, Heading, Container, VStack, Tag, Center, Button } from "@chakra-ui/react"
+import { Box, Heading, Container, VStack, Tag, Center, Button, Text } from "@chakra-ui/react"
 import { useState } from 'react'
 import Link from 'next/link'
 const { FaGlobeAmericas, FaSuitcase, FaMoneyBill, FaRulerCombined, FaBookOpen, FaExternalLinkAlt } = require('react-icons/fa');
@@ -17,6 +17,18 @@ const getEducation = (education) => {
         }
     }else{
         return []
+    }
+}
+
+const getSkills = (skills) => {
+    if(skills){
+        let response = ""
+        skills.map((item) => {
+            response += `${item}, `
+        })
+        return response.substring(0, response.length - 2)
+    }else{
+        return ""
     }
 }
 
@@ -84,35 +96,28 @@ export default function Home({ jobData }) {
                             {jobData.salary}
                         </Tag>
                     </Box>}
-                    {jobData?.skills?.length && <Box h='30px' display={"inline-flex"}>
-                        <FaRulerCombined style={{
-                            marginTop: "2px",
-                            marginRight: "10px",
-                            height: "25px",
-                            width: "25px"
-                        }} />
-                        {jobData.skills.map((item, i) => {
-                            return <Tag style={{
-                                marginRight: "0.3rem"
-                            }}
-                            key={i}>{item}</Tag>
-                        })}
-                    </Box>}
-                    {education?.length && <Box h='30px' display={"inline-flex"}>
-                        <FaBookOpen style={{
-                            marginTop: "2px",
-                            marginRight: "10px",
-                            height: "25px",
-                            width: "25px"
-                        }} />
-                        {education.map((item, i) => {
-                            return <Tag style={{
-                                marginRight: "0.3rem"
-                            }}
-                            key={i}>{item}</Tag>
-                        })}
-                    </Box>}
+                        {education?.length && <Box h='30px' display={"inline-flex"}>
+                            <FaBookOpen style={{
+                                marginTop: "2px",
+                                marginRight: "10px",
+                                height: "25px",
+                                width: "25px"
+                            }} />
+                            {education.map((item, i) => {
+                                return <Tag style={{
+                                    marginRight: "0.3rem"
+                                }}
+                                key={i}>{item}</Tag>
+                            })}
+                        </Box>}
+                    <hr />
                     {jobData.jobDescription && <Box>
+                        <Text>
+                            Skills: &nbsp;
+                        {
+                            getSkills(jobData.skills)
+                        }
+                        </Text>
                         <p dangerouslySetInnerHTML={{ __html: jobData.jobDescription }} style={{
                             marginTop: "2rem"
                         }}></p>

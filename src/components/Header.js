@@ -20,7 +20,7 @@ import {
   } from '@chakra-ui/icons';
   
   export default function WithSubnavigation() {
-    const { isOpen, onToggle } = useDisclosure();
+    // const { isOpen, onToggle } = useDisclosure();
   
     return (
       <Box>
