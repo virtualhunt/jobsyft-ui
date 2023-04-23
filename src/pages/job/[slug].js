@@ -1,9 +1,12 @@
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
+
+import { Icon } from '@chakra-ui/react'
+
 import { Box, Heading, Container, VStack, Tag, Center, Button, Text } from "@chakra-ui/react"
 import { useState } from 'react'
 import Link from 'next/link'
-const { FaGlobeAmericas, FaSuitcase, FaMoneyBill, FaRulerCombined, FaBookOpen, FaExternalLinkAlt } = require('react-icons/fa');
+const { FaGlobeAmericas, FaSuitcase, FaMoneyBill, FaBookOpen, FaExternalLinkAlt } = require('react-icons/fa');
 
 var axios = require('axios');
 
@@ -55,7 +58,7 @@ export default function Home({ jobData }) {
                         </Heading>
                     </Center>
                     {jobData?.location?.length && <Box h='30px' display={"inline-flex"}>
-                        <FaGlobeAmericas style={{
+                        <Icon as={FaGlobeAmericas} style={{
                             marginTop: "2px",
                             marginRight: "10px",
                             height: "25px",
@@ -70,7 +73,7 @@ export default function Home({ jobData }) {
                         })}
                     </Box>}
                     {(jobData.experience || jobData.employmentType) && <Box h='30px' display={"inline-flex"}>
-                        <FaSuitcase style={{
+                        <Icon as={FaSuitcase} style={{
                             marginTop: "2px",
                             marginRight: "10px",
                             height: "25px",
@@ -86,7 +89,7 @@ export default function Home({ jobData }) {
                         </Tag>}
                     </Box>}
                     {jobData.salary && <Box h='30px' display={"inline-flex"}>
-                        <FaMoneyBill style={{
+                        <Icon as={FaMoneyBill} style={{
                             marginTop: "2px",
                             marginRight: "10px",
                             height: "25px",
@@ -97,7 +100,7 @@ export default function Home({ jobData }) {
                         </Tag>
                     </Box>}
                         {education?.length && <Box h='30px' display={"inline-flex"}>
-                            <FaBookOpen style={{
+                            <Icon as={FaBookOpen} style={{
                                 marginTop: "2px",
                                 marginRight: "10px",
                                 height: "25px",

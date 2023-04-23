@@ -3,8 +3,14 @@ const nextConfig = {
   reactStrictMode: true,
   env: {
     NEXT_PUBLIC_GOOGLE_ANALYTICS:process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
-    DB_URL:process.env.DB_URL
+    DB_URL:process.env.DB_URL,
+    ANALYZE: process.env.ANALYZE
   },
 }
-
-module.exports = nextConfig
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+module.exports = (phase, defaultConfig) => {
+  return withBundleAnalyzer(nextConfig)
+}
+// nextConfig

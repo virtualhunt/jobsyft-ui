@@ -2,6 +2,7 @@ import {
     Box,
     Text
 } from '@chakra-ui/react';
+import { Icon } from '@chakra-ui/react'
 const { FaHeart } = require('react-icons/fa');
 
 
@@ -18,7 +19,7 @@ export default function Footer() {
                 height: "2rem"
             }}
             align="center" justifyItems={"center"}>
-            Made with <FaHeart style={{
+            Made with <Icon as={FaHeart} style={{
                 marginTop: "5px",
                 marginLeft: "5px",
                 marginRight: "5px",
